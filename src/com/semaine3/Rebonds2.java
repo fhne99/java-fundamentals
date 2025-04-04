@@ -32,6 +32,7 @@ public class Rebonds2 {
 			h_fin = clavier.nextDouble();
 		} while (h_fin < 0.0 || h_fin > h0);
 
+		
 		h = h0;
 		int count = 0;
 
