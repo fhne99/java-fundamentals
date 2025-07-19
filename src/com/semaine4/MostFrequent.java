@@ -9,23 +9,24 @@ class MostFrequent {
         /*******************************************
          * Completez le programme a partir d'ici.
          *******************************************/
-        
-        int[] tabResult =  new int[taille];
-        
-        for (int i = 0; i < taille ; i++) {
-        	int x = tab1[i];
-        	int count = 0;
+        int maxCount = 0;
+        int mostFrequent = tab1[0];
 
+        for (int i = 0; i < taille; i++) {
+            int count = 0;
             for (int j = 0; j < taille; j++) {
-            	if (tab1[j] == x) {
-            		count++;
-            	}      
+                if (tab1[j] == tab1[i]) {
+                    count++;
+                }
             }
-            tabResult[i] = count;
-            System.out.println("La valeur " + x + " apparaît " + count + " fois");
+            
+            if (count > maxCount) {
+                maxCount = count;
+                mostFrequent = tab1[i];
+            }
         }
-        
-        System.out.println();
+        System.out.println("Le nombre le plus frequent dans le tableau est le :");
+        System.out.print(mostFrequent + " (" + maxCount + " x)");
 
         /*******************************************
          * Ne rien modifier apres cette ligne.
